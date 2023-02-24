@@ -5,12 +5,15 @@ path = r"C:\...../" #folder path
 cwfolder = os.listdir(path)
 
 ##create folders 
+
 folder_names = ['csv files','image files','text files','pdf files']
 for file in range(len(folder_names)):
     if not os.path.exists(path+folder_names[file]):
              os.makedirs(path+folder_names[file])
-
+             
+             
 ### move the files to right folders        
+
 for file in cwfolder:
     if '.csv' in file and not os.path.exists(path + 'csv files/'+file):
         shutil.move(path+file,path+'csv files/'+file)
