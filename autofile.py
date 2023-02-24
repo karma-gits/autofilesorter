@@ -1,15 +1,14 @@
 ## Auto file sorter 2023
 
 import  os, shutil # shell utilities
-path = r"C:\...../"
+path = r"C:\...../" #folder path
 cwfolder = os.listdir(path)
 
 ##create folders 
 folder_names = ['csv files','image files','text files','pdf files']
 for file in range(len(folder_names)):
     if not os.path.exists(path+folder_names[file]):
-        #print(path + folder_names[file])
-        os.makedirs(path+folder_names[file])
+             os.makedirs(path+folder_names[file])
 
 ### move the files to right folders        
 for file in cwfolder:
@@ -23,3 +22,4 @@ for file in cwfolder:
         shutil.move(path+file,path+'text files/'+file)
     elif '.pdf' in file and not os.path.exists(path + 'pdf files/'+file):
         shutil.move(path+file,path+'pdf files/'+file)
+#end
